@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خلصت كام محاضره يكتكوت؟</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .subject-name {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #4A90E2;
+            background: #e7f3fe;
+            border-radius: 5px;
+            padding: 5px;
+            transition: background 0.3s;
+        }
+
+        .subject-name:hover {
+            background: #d0e4ff;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        #chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>خلصت كام محاضره؟</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>اسم المادة</th>
+                <th>المحاضرات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="subject-name">مشروعات صغيره</td>
+                <td>
+                    <input type="checkbox" id="subject1-lecture1"> محاضرة 1<br>
+                    <input type="checkbox" id="subject1-lecture2"> محاضرة 2<br>
+                    <input type="checkbox" id="subject1-lecture3"> محاضرة 3<br>
+                    <input type="checkbox" id="subject1-lecture4"> محاضرة 4<br>
+                    <input type="checkbox" id="subject1-lecture5"> محاضرة 5<br>
+                    <input type="checkbox" id="subject1-lecture6"> محاضرة 6<br>
+                    <input type="checkbox" id="subject1-lecture7"> محاضرة 7<br>
+                    <input type="checkbox" id="subject1-lecture8"> محاضرة 8<br>
+                    <input type="checkbox" id="subject1-lecture9"> محاضرة 9<br>
+                    <input type="checkbox" id="subject1-lecture10"> محاضرة 10<br>
+                    <input type="checkbox" id="subject1-lecture11"> محاضرة 11<br>
+                    <input type="checkbox" id="subject1-lecture12"> محاضرة 12<br>
+                    <input type="checkbox" id="subject1-lecture13"> محاضرة 13<br>
+                    <input type="checkbox" id="subject1-lecture14"> محاضرة 14<br>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject-name">نظم سياسيه</td>
+                <td>
+                    <input type="checkbox" id="subject2-lecture1"> محاضرة 1<br>
+                    <input type="checkbox" id="subject2-lecture2"> محاضرة 2<br>
+                    <input type="checkbox" id="subject2-lecture3"> محاضرة 3<br>
+                    <input type="checkbox" id="subject2-lecture4"> محاضرة 4<br>
+                    <input type="checkbox" id="subject2-lecture5"> محاضرة 5<br>
+                    <input type="checkbox" id="subject2-lecture6"> محاضرة 6<br>
+                    <input type="checkbox" id="subject2-lecture7"> محاضرة 7<br>
+                    <input type="checkbox" id="subject2-lecture8"> محاضرة 8<br>
+                    <input type="checkbox" id="subject2-lecture9"> محاضرة 9<br>
+                    <input type="checkbox" id="subject2-lecture10"> محاضرة 10<br>
+                    <input type="checkbox" id="subject2-lecture11"> محاضرة 11<br>
+                    <input type="checkbox" id="subject2-lecture12"> محاضرة 12<br>
+                    <input type="checkbox" id="subject2-lecture13"> محاضرة 13<br>
+                    <input type="checkbox" id="subject2-lecture14"> محاضرة 14<br>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject-name">اقتصاد قياسي</td>
+                <td>
+                    <input type="checkbox" id="subject3-lecture1"> محاضرة 1<br>
+                    <input type="checkbox" id="subject3-lecture2"> محاضرة 2<br>
+                    <input type="checkbox" id="subject3-lecture3"> محاضرة 3<br>
+                    <input type="checkbox" id="subject3-lecture4"> محاضرة 4<br>
+                    <input type="checkbox" id="subject3-lecture5"> محاضرة 5<br>
+                    <input type="checkbox" id="subject3-lecture6"> محاضرة 6<br>
+                    <input type="checkbox" id="subject3-lecture7"> محاضرة 7<br>
+                    <input type="checkbox" id="subject3-lecture8"> محاضرة 8<br>
+                    <input type="checkbox" id="subject3-lecture9"> محاضرة 9<br>
+                    <input type="checkbox" id="subject3-lecture10"> محاضرة 10<br>
+                    <input type="checkbox" id="subject3-lecture11"> محاضرة 11<br>
+                    <input type="checkbox" id="subject3-lecture12"> محاضرة 12<br>
+                    <input type="checkbox" id="subject3-lecture13"> محاضرة 13<br>
+                    <input type="checkbox" id="subject3-lecture14"> محاضرة 14<br>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject-name">تخطيط</td>
+                <td>
+                    <input type="checkbox" id="subject4-lecture1"> محاضرة 1<br>
+                    <input type="checkbox" id="subject4-lecture2"> محاضرة 2<br>
+                    <input type="checkbox" id="subject4-lecture3"> محاضرة 3<br>
+                    <input type="checkbox" id="subject4-lecture4"> محاضرة 4<br>
+                    <input type="checkbox" id="subject4-lecture5"> محاضرة 5<br>
+                    <input type="checkbox" id="subject4-lecture6"> محاضرة 6<br>
+                    <input type="checkbox" id="subject4-lecture7"> محاضرة 7<br>
+                    <input type="checkbox" id="subject4-lecture8"> محاضرة 8<br>
+                    <input type="checkbox" id="subject4-lecture9"> محاضرة 9<br>
+                    <input type="checkbox" id="subject4-lecture10"> محاضرة 10<br>
+                    <input type="checkbox" id="subject4-lecture11"> محاضرة 11<br>
+                    <input type="checkbox" id="subject4-lecture12"> محاضرة 12<br>
+                    <input type="checkbox" id="subject4-lecture13"> محاضرة 13<br>
+                    <input type="checkbox" id="subject4-lecture14"> محاضرة 14<br>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject-name">دراسات جدوى</td>
+                <td>
+                    <input type="checkbox" id="subject5-lecture1"> محاضرة 1<br>
+                    <input type="checkbox" id="subject5-lecture2"> محاضرة 2<br>
+                    <input type="checkbox" id="subject5-lecture3"> محاضرة 3<br>
+                    <input type="checkbox" id="subject5-lecture4"> محاضرة 4<br>
+                    <input type="checkbox" id="subject5-lecture5"> محاضرة 5<br>
+                    <input type="checkbox" id="subject5-lecture6"> محاضرة 6<br>
+                    <input type="checkbox" id="subject5-lecture7"> محاضرة 7<br>
+                    <input type="checkbox" id="subject5-lecture8"> محاضرة 8<br>
+                    <input type="checkbox" id="subject5-lecture9"> محاضرة 9<br>
+                    <input type="checkbox" id="subject5-lecture10"> محاضرة 10<br>
+                    <input type="checkbox" id="subject5-lecture11"> محاضرة 11<br>
+                    <input type="checkbox" id="subject5-lecture12"> محاضرة 12<br>
+                    <input type="checkbox" id="subject5-lecture13"> محاضرة 13<br>
+                    <input type="checkbox" id="subject5-lecture14"> محاضرة 14<br>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject-name">قضايا اقتصاديه</td>
+                <td>
+                    <input type="checkbox" id="subject6-lecture1"> محاضرة 1<br>
+                    <input type="checkbox" id="subject6-lecture2"> محاضرة 2<br>
+                    <input type="checkbox" id="subject6-lecture3"> محاضرة 3<br>
+                    <input type="checkbox" id="subject6-lecture4"> محاضرة 4<br>
+                    <input type="checkbox" id="subject6-lecture5"> محاضرة 5<br>
+                    <input type="checkbox" id="subject6-lecture6"> محاضرة 6<br>
+                    <input type="checkbox" id="subject6-lecture7"> محاضرة 7<br>
+                    <input type="checkbox" id="subject6-lecture8"> محاضرة 8<br>
+                    <input type="checkbox" id="subject6-lecture9"> محاضرة 9<br>
+                    <input type="checkbox" id="subject6-lecture10"> محاضرة 10<br>
+                    <input type="checkbox" id="subject6-lecture11"> محاضرة 11<br>
+                    <input type="checkbox" id="subject6-lecture12"> محاضرة 12<br>
+                    <input type="checkbox" id="subject6-lecture13"> محاضرة 13<br>
+                    <input type="checkbox" id="subject6-lecture14"> محاضرة 14<br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        window.onload = function() {
+            for (let i = 1; i <= 6; i++) {
+                for (let j = 1; j <= 14; j++) {
+                    const checkbox = document.getElementById(`subject${i}-lecture${j}`);
+                    const savedState = localStorage.getItem(`subject${i}-lecture${j}`);
+                    checkbox.checked = savedState === 'true';
+
+                    checkbox.addEventListener('change', function() {
+                        localStorage.setItem(`subject${i}-lecture${j}`, checkbox.checked);
+                        updateChart();
+                    });
+                }
+            }
+            updateChart();
+        }
+
+        function updateChart() {
+            const lectureCounts = [0, 0, 0, 0, 0, 0];
+
+            for (let i = 1; i <= 6; i++) {
+                for (let j = 1; j <= 14; j++) {
+                    const checkbox = document.getElementById(`subject${i}-lecture${j}`);
+                    if (checkbox.checked) {
+                        lectureCounts[i - 1]++;
+                    }
+                }
+            }
+
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+
+                                      labels: ['مشروعات صغيره', 'نظم', 'قياسي', 'تخطيط', 'دراسات جدوى', 'قضايا'],                    datasets: [{
+                        label: 'عدد المحاضرات المكتملة',
+                        data: lectureCounts,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
